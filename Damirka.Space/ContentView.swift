@@ -7,8 +7,17 @@
 
 import SwiftUI
 
+enum ShowAnimation {
+    case None
+    case Start
+    case HideTab
+    case End
+}
+
 struct ContentView: View {
     @State var show = false
+    
+    @State var showAnim = ShowAnimation.None
     
     @State var tab = 1
     
@@ -18,7 +27,7 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            
+
             TabView(selection: $tab) {
                 HomeView()
                     .tag(1)
@@ -31,24 +40,50 @@ struct ContentView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
 
-            ZStack {
-                VStack(spacing: 0) {
-                    PlayerBarView(show: $show)
-                    
-                    CustomTabView(tab: $tab)
+            if(!show) {
+                ZStack {
+                    VStack(spacing: 0) {
+                        PlayerBarView(show: $show)
+
+                        CustomTabView(tab: $tab)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .background(.regularMaterial)
                 }
-                .frame(maxWidth: .infinity)
-                .background(.ultraThinMaterial)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+
+            } else {
+                ZStack {
+                    VStack(spacing: 0) {
+                        PlayerBarView(show: $show)
+                            .background(.regularMaterial)
+                            .offset(y: showAnim == .Start || showAnim == .End ? 0 : -820)
+                        
+                        CustomTabView(tab: $tab)
+                            .background(Color(red: 0.92, green: 0.92, blue: 0.92))
+                            .offset(y: showAnim == .Start || showAnim == .End ? 0 : 100)
+
+                    }
+                    .frame(maxWidth: .infinity)
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+                .zIndex(1)
+                .onAppear() {
+                    showAnim = .Start
+                    withAnimation(.easeOut(duration: 0.3)) {
+                        showAnim = ShowAnimation.HideTab
+                    }
+                }
+                .onDisappear() {
+                    showAnim = .None
+                }
+                
+                ZStack {
+                    PlayView(show: $show, showAnim: $showAnim)
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+                .offset(y: showAnim == .Start || showAnim == .End ? 750 : 0)
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
-            .zIndex(1)
-            .offset(y: show ? 300: 0)
-            
-            ZStack {
-                PlayView(show: $show)
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-            .offset(y: show ? 0: 1000)
         }
         .background(.clear)
     }

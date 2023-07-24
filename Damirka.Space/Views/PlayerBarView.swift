@@ -26,9 +26,7 @@ struct PlayerBarView : View {
                 }
                 .frame(maxWidth: .infinity)
                 .onTapGesture {
-                    withAnimation(.easeOut(duration: 0.5)) {
-                        show = true
-                    }
+                    show = true
                 }
     //            .fullScreenCover(isPresented: $show){
     //                //PlayView(show: $show)

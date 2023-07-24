@@ -32,6 +32,7 @@ struct HomeView: View {
                                 }
                             }.padding()
                         }
+                        Spacer(minLength: 50)
                     }
                     
                 case .failure(let error):

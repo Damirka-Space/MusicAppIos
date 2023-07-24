@@ -8,8 +8,20 @@
 import SwiftUI
 
 struct PlayView: View {
-    
     @Binding var show: Bool
+    @Binding var showAnim: ShowAnimation
+    
+    private func close() {
+        withAnimation(.easeOut(duration: 0.3)) {
+            showAnim = ShowAnimation.End
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(300), execute: {
+            withAnimation(.easeOut(duration: 0.02)) {
+                show = false
+            }
+        })
+    }
     
     var body: some View {
         NavigationStack {
@@ -27,20 +39,37 @@ struct PlayView: View {
                     Image(systemName: "chevron.backward")
                         .rotationEffect(Angle.degrees(-90))
                         .onTapGesture {
-                            withAnimation(.easeOut(duration: 0.5)) {
-                                show = false
-                            }
+                            close()
                         }
                 }
             }
         }
+        .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local)
+                            .onEnded({ value in
+                                if value.translation.width < 0 {
+                                    // left
+                                }
+
+                                if value.translation.width > 0 {
+                                    // right
+                                }
+                                if value.translation.height < 0 {
+                                    // up
+                                }
+
+                                if value.translation.height > 0 {
+                                    // close on swipe down
+                                    close()
+                                }
+                            }))
     }
 }
 
 struct PlayView_Previews: PreviewProvider {
     @State static var show = true
+    @State static var showAnim = ShowAnimation.HideTab
     
     static var previews: some View {
-        PlayView(show: $show)
+        PlayView(show: $show, showAnim: $showAnim)
     }
 }
