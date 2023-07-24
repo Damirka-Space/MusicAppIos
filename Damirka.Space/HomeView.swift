@@ -32,8 +32,8 @@ struct HomeView: View {
                                 }
                             }.padding()
                         }
-                        Spacer(minLength: 50)
                     }
+                    Spacer(minLength: 50)
                     
                 case .failure(let error):
                     Text(error.localizedDescription)

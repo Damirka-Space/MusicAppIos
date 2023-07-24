@@ -28,10 +28,6 @@ struct PlayerBarView : View {
                 .onTapGesture {
                     show = true
                 }
-    //            .fullScreenCover(isPresented: $show){
-    //                //PlayView(show: $show)
-    //            }
-                
 
                 Image(systemName: "pause.fill")
                     .imageScale(.large)

@@ -87,48 +87,6 @@ struct ContentView: View {
         }
         .background(.clear)
     }
-    
-//    var body: some View {
-//        TabView {
-//            HomeView()
-//                .tabItem {
-//                    Image(systemName: "music.note.house")
-//                }
-//                .toolbar {
-//                    ToolbarItemGroup(placement: .bottomBar) {
-//                        PlayerBarView(show: $show)
-//                    }
-//                }
-//
-//            Text("Search")
-//                .tabItem {
-//                    Image(systemName: "magnifyingglass")
-//                }
-//                .toolbar {
-//                    ToolbarItemGroup(placement: .bottomBar) {
-//                        PlayerBarView(show: $show)
-//                    }
-//                }
-//            Text("Notification")
-//                .tabItem {
-//                    Image(systemName: "bell")
-//                }
-//                .toolbar {
-//                    ToolbarItemGroup(placement: .bottomBar) {
-//                        PlayerBarView(show: $show)
-//                    }
-//                }
-//            Text("Favourites")
-//                .tabItem {
-//                    Image(systemName: "suit.heart")
-//                }
-//                .toolbar {
-//                    ToolbarItemGroup(placement: .bottomBar) {
-//                        PlayerBarView(show: $show)
-//                    }
-//                }
-//        }
-//    }
 }
 
 struct ContentView_Previews: PreviewProvider {
