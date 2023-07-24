@@ -1,0 +1,700 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BB2CA7BD2A6C197C0019491B /* UIToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2CA7BC2A6C197C0019491B /* UIToolBar.swift */; };
+		BB2CA7BF2A6C20590019491B /* PlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2CA7BE2A6C20590019491B /* PlayView.swift */; };
+		BB2CA7C12A6C20F00019491B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2CA7C02A6C20F00019491B /* ProfileView.swift */; };
+		BB2CA7C32A6C21100019491B /* FindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2CA7C22A6C21100019491B /* FindView.swift */; };
+		BB2CA7C52A6C673C0019491B /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2CA7C42A6C673C0019491B /* CustomTabView.swift */; };
+		BB369F732A69538800B54374 /* Damirka_SpaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB369F722A69538800B54374 /* Damirka_SpaceApp.swift */; };
+		BB369F752A69538800B54374 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB369F742A69538800B54374 /* ContentView.swift */; };
+		BB369F772A69538A00B54374 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB369F762A69538A00B54374 /* Assets.xcassets */; };
+		BB369F7A2A69538A00B54374 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB369F792A69538A00B54374 /* Preview Assets.xcassets */; };
+		BB369F842A69538B00B54374 /* Damirka_SpaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB369F832A69538B00B54374 /* Damirka_SpaceTests.swift */; };
+		BB369F8E2A69538B00B54374 /* Damirka_SpaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB369F8D2A69538B00B54374 /* Damirka_SpaceUITests.swift */; };
+		BB369F902A69538B00B54374 /* Damirka_SpaceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB369F8F2A69538B00B54374 /* Damirka_SpaceUITestsLaunchTests.swift */; };
+		BB372A572A6969150039EF18 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB372A562A6969150039EF18 /* HomeView.swift */; };
+		BB372A5A2A6974890039EF18 /* BlockEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB372A592A6974890039EF18 /* BlockEntity.swift */; };
+		BB372A5C2A6974BB0039EF18 /* AlbumEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB372A5B2A6974BB0039EF18 /* AlbumEntity.swift */; };
+		BB372A5E2A6976100039EF18 /* TrackEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB372A5D2A6976100039EF18 /* TrackEntity.swift */; };
+		BB372A602A697C340039EF18 /* BlocksEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB372A5F2A697C340039EF18 /* BlocksEntity.swift */; };
+		BB372A622A6986150039EF18 /* ImageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB372A612A6986150039EF18 /* ImageEntity.swift */; };
+		BB372A652A69B0F10039EF18 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB372A642A69B0F10039EF18 /* CardView.swift */; };
+		BB372A682A69B1200039EF18 /* BlocksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB372A672A69B1200039EF18 /* BlocksModel.swift */; };
+		BB372A6A2A69B14E0039EF18 /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB372A692A69B14E0039EF18 /* AlbumView.swift */; };
+		BB372A6C2A69B2180039EF18 /* TracksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB372A6B2A69B2180039EF18 /* TracksModel.swift */; };
+		BB372A6F2A69BFB40039EF18 /* PlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB372A6E2A69BFB40039EF18 /* PlayerService.swift */; };
+		BB773D112A6AE55500FD754F /* PlayerBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB773D102A6AE55500FD754F /* PlayerBarView.swift */; };
+		BB9DF0162A6A78F600675C9B /* TrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9DF0152A6A78F600675C9B /* TrackView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BB369F802A69538B00B54374 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BB369F672A69538800B54374 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB369F6E2A69538800B54374;
+			remoteInfo = Damirka.Space;
+		};
+		BB369F8A2A69538B00B54374 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BB369F672A69538800B54374 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB369F6E2A69538800B54374;
+			remoteInfo = Damirka.Space;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BB2CA7BC2A6C197C0019491B /* UIToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIToolBar.swift; sourceTree = "<group>"; };
+		BB2CA7BE2A6C20590019491B /* PlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayView.swift; sourceTree = "<group>"; };
+		BB2CA7C02A6C20F00019491B /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		BB2CA7C22A6C21100019491B /* FindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindView.swift; sourceTree = "<group>"; };
+		BB2CA7C42A6C673C0019491B /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
+		BB369F6F2A69538800B54374 /* Damirka.Space.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Damirka.Space.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB369F722A69538800B54374 /* Damirka_SpaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Damirka_SpaceApp.swift; sourceTree = "<group>"; };
+		BB369F742A69538800B54374 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BB369F762A69538A00B54374 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BB369F792A69538A00B54374 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BB369F7F2A69538B00B54374 /* Damirka.SpaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Damirka.SpaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB369F832A69538B00B54374 /* Damirka_SpaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Damirka_SpaceTests.swift; sourceTree = "<group>"; };
+		BB369F892A69538B00B54374 /* Damirka.SpaceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Damirka.SpaceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB369F8D2A69538B00B54374 /* Damirka_SpaceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Damirka_SpaceUITests.swift; sourceTree = "<group>"; };
+		BB369F8F2A69538B00B54374 /* Damirka_SpaceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Damirka_SpaceUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BB372A562A6969150039EF18 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		BB372A592A6974890039EF18 /* BlockEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockEntity.swift; sourceTree = "<group>"; };
+		BB372A5B2A6974BB0039EF18 /* AlbumEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumEntity.swift; sourceTree = "<group>"; };
+		BB372A5D2A6976100039EF18 /* TrackEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackEntity.swift; sourceTree = "<group>"; };
+		BB372A5F2A697C340039EF18 /* BlocksEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksEntity.swift; sourceTree = "<group>"; };
+		BB372A612A6986150039EF18 /* ImageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEntity.swift; sourceTree = "<group>"; };
+		BB372A642A69B0F10039EF18 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		BB372A672A69B1200039EF18 /* BlocksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksModel.swift; sourceTree = "<group>"; };
+		BB372A692A69B14E0039EF18 /* AlbumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumView.swift; sourceTree = "<group>"; };
+		BB372A6B2A69B2180039EF18 /* TracksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksModel.swift; sourceTree = "<group>"; };
+		BB372A6E2A69BFB40039EF18 /* PlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerService.swift; sourceTree = "<group>"; };
+		BB372A702A69CBAB0039EF18 /* Damirka-Space-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Damirka-Space-Info.plist"; sourceTree = SOURCE_ROOT; };
+		BB773D102A6AE55500FD754F /* PlayerBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerBarView.swift; sourceTree = "<group>"; };
+		BB9DF0152A6A78F600675C9B /* TrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BB369F6C2A69538800B54374 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB369F7C2A69538B00B54374 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB369F862A69538B00B54374 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BB2CA7BB2A6C196E0019491B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BB2CA7BC2A6C197C0019491B /* UIToolBar.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BB369F662A69538800B54374 = {
+			isa = PBXGroup;
+			children = (
+				BB369F712A69538800B54374 /* Damirka.Space */,
+				BB369F822A69538B00B54374 /* Damirka.SpaceTests */,
+				BB369F8C2A69538B00B54374 /* Damirka.SpaceUITests */,
+				BB369F702A69538800B54374 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BB369F702A69538800B54374 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BB369F6F2A69538800B54374 /* Damirka.Space.app */,
+				BB369F7F2A69538B00B54374 /* Damirka.SpaceTests.xctest */,
+				BB369F892A69538B00B54374 /* Damirka.SpaceUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BB369F712A69538800B54374 /* Damirka.Space */ = {
+			isa = PBXGroup;
+			children = (
+				BB2CA7BB2A6C196E0019491B /* Extensions */,
+				BB372A702A69CBAB0039EF18 /* Damirka-Space-Info.plist */,
+				BB372A6D2A69BF940039EF18 /* Services */,
+				BB372A662A69B10C0039EF18 /* Models */,
+				BB372A632A69B0E10039EF18 /* Views */,
+				BB372A582A69743E0039EF18 /* Entities */,
+				BB369F722A69538800B54374 /* Damirka_SpaceApp.swift */,
+				BB369F742A69538800B54374 /* ContentView.swift */,
+				BB369F762A69538A00B54374 /* Assets.xcassets */,
+				BB369F782A69538A00B54374 /* Preview Content */,
+				BB372A562A6969150039EF18 /* HomeView.swift */,
+			);
+			path = Damirka.Space;
+			sourceTree = "<group>";
+		};
+		BB369F782A69538A00B54374 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				BB369F792A69538A00B54374 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BB369F822A69538B00B54374 /* Damirka.SpaceTests */ = {
+			isa = PBXGroup;
+			children = (
+				BB369F832A69538B00B54374 /* Damirka_SpaceTests.swift */,
+			);
+			path = Damirka.SpaceTests;
+			sourceTree = "<group>";
+		};
+		BB369F8C2A69538B00B54374 /* Damirka.SpaceUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BB369F8D2A69538B00B54374 /* Damirka_SpaceUITests.swift */,
+				BB369F8F2A69538B00B54374 /* Damirka_SpaceUITestsLaunchTests.swift */,
+			);
+			path = Damirka.SpaceUITests;
+			sourceTree = "<group>";
+		};
+		BB372A582A69743E0039EF18 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				BB372A592A6974890039EF18 /* BlockEntity.swift */,
+				BB372A5B2A6974BB0039EF18 /* AlbumEntity.swift */,
+				BB372A5D2A6976100039EF18 /* TrackEntity.swift */,
+				BB372A5F2A697C340039EF18 /* BlocksEntity.swift */,
+				BB372A612A6986150039EF18 /* ImageEntity.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		BB372A632A69B0E10039EF18 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BB372A642A69B0F10039EF18 /* CardView.swift */,
+				BB372A692A69B14E0039EF18 /* AlbumView.swift */,
+				BB9DF0152A6A78F600675C9B /* TrackView.swift */,
+				BB773D102A6AE55500FD754F /* PlayerBarView.swift */,
+				BB2CA7BE2A6C20590019491B /* PlayView.swift */,
+				BB2CA7C02A6C20F00019491B /* ProfileView.swift */,
+				BB2CA7C22A6C21100019491B /* FindView.swift */,
+				BB2CA7C42A6C673C0019491B /* CustomTabView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BB372A662A69B10C0039EF18 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BB372A672A69B1200039EF18 /* BlocksModel.swift */,
+				BB372A6B2A69B2180039EF18 /* TracksModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BB372A6D2A69BF940039EF18 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BB372A6E2A69BFB40039EF18 /* PlayerService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BB369F6E2A69538800B54374 /* Damirka.Space */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB369F932A69538B00B54374 /* Build configuration list for PBXNativeTarget "Damirka.Space" */;
+			buildPhases = (
+				BB369F6B2A69538800B54374 /* Sources */,
+				BB369F6C2A69538800B54374 /* Frameworks */,
+				BB369F6D2A69538800B54374 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Damirka.Space;
+			productName = Damirka.Space;
+			productReference = BB369F6F2A69538800B54374 /* Damirka.Space.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BB369F7E2A69538B00B54374 /* Damirka.SpaceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB369F962A69538B00B54374 /* Build configuration list for PBXNativeTarget "Damirka.SpaceTests" */;
+			buildPhases = (
+				BB369F7B2A69538B00B54374 /* Sources */,
+				BB369F7C2A69538B00B54374 /* Frameworks */,
+				BB369F7D2A69538B00B54374 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BB369F812A69538B00B54374 /* PBXTargetDependency */,
+			);
+			name = Damirka.SpaceTests;
+			productName = Damirka.SpaceTests;
+			productReference = BB369F7F2A69538B00B54374 /* Damirka.SpaceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BB369F882A69538B00B54374 /* Damirka.SpaceUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB369F992A69538B00B54374 /* Build configuration list for PBXNativeTarget "Damirka.SpaceUITests" */;
+			buildPhases = (
+				BB369F852A69538B00B54374 /* Sources */,
+				BB369F862A69538B00B54374 /* Frameworks */,
+				BB369F872A69538B00B54374 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BB369F8B2A69538B00B54374 /* PBXTargetDependency */,
+			);
+			name = Damirka.SpaceUITests;
+			productName = Damirka.SpaceUITests;
+			productReference = BB369F892A69538B00B54374 /* Damirka.SpaceUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BB369F672A69538800B54374 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					BB369F6E2A69538800B54374 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					BB369F7E2A69538B00B54374 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = BB369F6E2A69538800B54374;
+					};
+					BB369F882A69538B00B54374 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = BB369F6E2A69538800B54374;
+					};
+				};
+			};
+			buildConfigurationList = BB369F6A2A69538800B54374 /* Build configuration list for PBXProject "Damirka.Space" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BB369F662A69538800B54374;
+			productRefGroup = BB369F702A69538800B54374 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BB369F6E2A69538800B54374 /* Damirka.Space */,
+				BB369F7E2A69538B00B54374 /* Damirka.SpaceTests */,
+				BB369F882A69538B00B54374 /* Damirka.SpaceUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BB369F6D2A69538800B54374 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB369F7A2A69538A00B54374 /* Preview Assets.xcassets in Resources */,
+				BB369F772A69538A00B54374 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB369F7D2A69538B00B54374 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB369F872A69538B00B54374 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BB369F6B2A69538800B54374 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB372A6F2A69BFB40039EF18 /* PlayerService.swift in Sources */,
+				BB372A6A2A69B14E0039EF18 /* AlbumView.swift in Sources */,
+				BB2CA7C32A6C21100019491B /* FindView.swift in Sources */,
+				BB9DF0162A6A78F600675C9B /* TrackView.swift in Sources */,
+				BB372A6C2A69B2180039EF18 /* TracksModel.swift in Sources */,
+				BB2CA7BF2A6C20590019491B /* PlayView.swift in Sources */,
+				BB773D112A6AE55500FD754F /* PlayerBarView.swift in Sources */,
+				BB2CA7C52A6C673C0019491B /* CustomTabView.swift in Sources */,
+				BB372A5A2A6974890039EF18 /* BlockEntity.swift in Sources */,
+				BB372A652A69B0F10039EF18 /* CardView.swift in Sources */,
+				BB372A572A6969150039EF18 /* HomeView.swift in Sources */,
+				BB372A682A69B1200039EF18 /* BlocksModel.swift in Sources */,
+				BB2CA7C12A6C20F00019491B /* ProfileView.swift in Sources */,
+				BB369F752A69538800B54374 /* ContentView.swift in Sources */,
+				BB372A5C2A6974BB0039EF18 /* AlbumEntity.swift in Sources */,
+				BB2CA7BD2A6C197C0019491B /* UIToolBar.swift in Sources */,
+				BB372A622A6986150039EF18 /* ImageEntity.swift in Sources */,
+				BB372A602A697C340039EF18 /* BlocksEntity.swift in Sources */,
+				BB372A5E2A6976100039EF18 /* TrackEntity.swift in Sources */,
+				BB369F732A69538800B54374 /* Damirka_SpaceApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB369F7B2A69538B00B54374 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB369F842A69538B00B54374 /* Damirka_SpaceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB369F852A69538B00B54374 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB369F8E2A69538B00B54374 /* Damirka_SpaceUITests.swift in Sources */,
+				BB369F902A69538B00B54374 /* Damirka_SpaceUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BB369F812A69538B00B54374 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BB369F6E2A69538800B54374 /* Damirka.Space */;
+			targetProxy = BB369F802A69538B00B54374 /* PBXContainerItemProxy */;
+		};
+		BB369F8B2A69538B00B54374 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BB369F6E2A69538800B54374 /* Damirka.Space */;
+			targetProxy = BB369F8A2A69538B00B54374 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		BB369F912A69538B00B54374 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BB369F922A69538B00B54374 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BB369F942A69538B00B54374 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Damirka.Space/Preview Content\"";
+				DEVELOPMENT_TEAM = 9PH72V22JG;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Damirka-Space-Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "space.damirka.Damirka-Space";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BB369F952A69538B00B54374 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Damirka.Space/Preview Content\"";
+				DEVELOPMENT_TEAM = 9PH72V22JG;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Damirka-Space-Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "space.damirka.Damirka-Space";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BB369F972A69538B00B54374 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "space.damirka.Damirka-SpaceTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Damirka.Space.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Damirka.Space";
+			};
+			name = Debug;
+		};
+		BB369F982A69538B00B54374 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "space.damirka.Damirka-SpaceTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Damirka.Space.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Damirka.Space";
+			};
+			name = Release;
+		};
+		BB369F9A2A69538B00B54374 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "space.damirka.Damirka-SpaceUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Damirka.Space;
+			};
+			name = Debug;
+		};
+		BB369F9B2A69538B00B54374 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "space.damirka.Damirka-SpaceUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Damirka.Space;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BB369F6A2A69538800B54374 /* Build configuration list for PBXProject "Damirka.Space" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB369F912A69538B00B54374 /* Debug */,
+				BB369F922A69538B00B54374 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB369F932A69538B00B54374 /* Build configuration list for PBXNativeTarget "Damirka.Space" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB369F942A69538B00B54374 /* Debug */,
+				BB369F952A69538B00B54374 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB369F962A69538B00B54374 /* Build configuration list for PBXNativeTarget "Damirka.SpaceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB369F972A69538B00B54374 /* Debug */,
+				BB369F982A69538B00B54374 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB369F992A69538B00B54374 /* Build configuration list for PBXNativeTarget "Damirka.SpaceUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB369F9A2A69538B00B54374 /* Debug */,
+				BB369F9B2A69538B00B54374 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BB369F672A69538800B54374 /* Project object */;
+}
