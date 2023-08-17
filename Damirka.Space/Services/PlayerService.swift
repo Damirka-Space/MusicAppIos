@@ -15,7 +15,8 @@ final class PlayerService : AVPlayer, ObservableObject {
     
     private var playingQueue = AVQueuePlayer()
     
-    private var isPlaying = false
+    private var playing = false
+    private var showBarView = false;
    
     private var timeObserverToken: Any?
     
@@ -37,6 +38,18 @@ final class PlayerService : AVPlayer, ObservableObject {
             [weak self] _ in
             self?.currentTimeInSeconds = self?.currentTime().seconds ?? 0.0
         }
+    }
+    
+    func isNeedShowBarView() -> Bool {
+        return showBarView
+    }
+    
+    func isPlaying() -> Bool {
+        return playing
+    }
+    
+    func getPlayingTrack() -> TrackEntity {
+        return tracks![currentIndex];
     }
     
     func getId() -> Int {
@@ -67,6 +80,7 @@ final class PlayerService : AVPlayer, ObservableObject {
     func setPlaylist(tracks: [TrackEntity], id: Int) {
         self.tracks = tracks
         self.albumId = id
+        showBarView = true
     }
 
     
@@ -101,13 +115,21 @@ final class PlayerService : AVPlayer, ObservableObject {
         play()
     }
     
+    func playNext() {
+        playTrack(track: currentIndex + 1)
+    }
+    
+    func playPrev() {
+        playTrack(track: currentIndex - 1)
+    }
+    
     override func play() {
-        isPlaying = true
+        playing = true
         super.play()
     }
     
     override func pause() {
-        isPlaying = false
+        playing = false
         super.pause()
     }
 }

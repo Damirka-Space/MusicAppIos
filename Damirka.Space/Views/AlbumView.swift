@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct AlbumView: View {
-    var playerService: PlayerService
+    @EnvironmentObject
+    private var playerService: PlayerService
     
     @StateObject private var tracksModel = TracksModel()
     @State private var currentTrackId = -1
@@ -17,16 +18,8 @@ struct AlbumView: View {
     
     init(album albumEntity: AlbumEntity) {
         self.album = albumEntity
-        playerService = Damirka_SpaceApp.playerService
         isAlbum = album.albumType == "ALBUM" || album.albumType == "SINGLE"
     }
-    
-    func startUp() {
-        if(playerService.getId() == album.id) {
-            currentTrackId = playerService.getPlayingIndex()
-        }
-    }
-    
     
     func playTrack() {
         do {
@@ -66,7 +59,7 @@ struct AlbumView: View {
                             self.currentTrackId = tId
                             playTrack()
                         }
-                        .listRowBackground(tId == currentTrackId ? Color.teal : Color.white)
+                        .listRowBackground(playerService.getId() == album.id && tId == playerService.getPlayingIndex() ? Color.teal : Color.white)
                         //.foregroundColor(tId == currentTrackId ? .accentColor : .black)
                 }
                 .listRowBackground(Color.white)
@@ -79,8 +72,8 @@ struct AlbumView: View {
                         self.tracksModel.apiCall(albumId: album.id)
                     }
             }
+            Spacer(minLength: 50)
         }
-        .onAppear(perform: startUp)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Image(systemName: "square.and.arrow.up")

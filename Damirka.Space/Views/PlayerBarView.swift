@@ -9,31 +9,57 @@ import SwiftUI
 
 struct PlayerBarView : View {
     
+    @EnvironmentObject
+    private var playerService: PlayerService;
+    
     @Binding var show: Bool
     
     var visible = true
     
     var body: some View {
         HStack {
-            if(visible) {
+            if(playerService.isNeedShowBarView()) {
                 Spacer(minLength: 20)
                 Image(systemName: "heart")
                     .imageScale(.large)
                 
                 VStack {
-                    Text("Text1").font(.headline)
-                    Text("Text2").font(.subheadline)
+                    Text(playerService.getPlayingTrack().title).font(.headline)
+                    Text(playerService.getPlayingTrack().author.joined(separator: ", ")).font(.subheadline)
                 }
                 .frame(maxWidth: .infinity)
                 .onTapGesture {
                     show = true
                 }
+                .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local)
+                                    .onEnded({ value in
+                                        if value.translation.width < 0 {
+                                            playerService.playNext()
+                                        }
 
-                Image(systemName: "pause.fill")
-                    .imageScale(.large)
+                                        if value.translation.width > 0 {
+                                            playerService.playPrev()
+                                        }
+                }))
+
+                if(playerService.isPlaying()) {
+                    Image(systemName: "pause.fill")
+                        .imageScale(.large)
+                        .onTapGesture {
+                            playerService.pause()
+                        }
+                }
+                else {
+                    Image(systemName: "play.fill")
+                        .imageScale(.large)
+                        .onTapGesture {
+                            playerService.play()
+                        }
+                }
+                
                 Spacer(minLength: 20)
             }
         }
-        .frame(maxWidth: .infinity, maxHeight: visible ? 50 : 0)
+        .frame(maxWidth: .infinity, maxHeight: playerService.isNeedShowBarView() ? 50 : 0)
     }
 }

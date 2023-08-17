@@ -9,11 +9,13 @@ import SwiftUI
 
 @main
 struct Damirka_SpaceApp: App {
-    static let playerService = PlayerService()
+    @State
+    private var playerService = PlayerService()
     
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(playerService)
         }
     }
 }

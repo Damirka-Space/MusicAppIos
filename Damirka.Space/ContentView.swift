@@ -91,7 +91,11 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     
+    @State
+    private static var player = PlayerService()
+    
     static var previews: some View {
         ContentView()
+            .environmentObject(player)
     }
 }
