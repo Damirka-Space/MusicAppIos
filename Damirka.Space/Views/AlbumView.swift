@@ -42,12 +42,12 @@ struct AlbumView: View {
                     } placeholder: {
                         ProgressView()
                     }
-                    .frame(width: 300, height: 300, alignment: .center)
+                    .frame(maxWidth: .infinity, maxHeight: 300, alignment: .center)
 
                     Text(album.title).font(.title2)
                     Text(album.description).font(.title3)
                 }
-                .frame(width: 350, alignment: .center)
+                .frame(maxWidth: .infinity, alignment: .center)
             }
             
             switch(tracksModel.result) {
@@ -72,8 +72,9 @@ struct AlbumView: View {
                         self.tracksModel.apiCall(albumId: album.id)
                     }
             }
-            Spacer(minLength: 50)
+            Spacer(minLength: 100)
         }
+        .listStyle(GroupedListStyle())
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Image(systemName: "square.and.arrow.up")
