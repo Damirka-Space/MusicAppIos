@@ -40,6 +40,7 @@ struct TrackView: View {
                 Text(track.author.joined(separator: ", "))
                     .frame(width: 200, height: 10, alignment: .leading)
             }
+            .contentShape(Rectangle())
             
             Image(systemName: "ellipsis")
                 .frame(maxWidth: .infinity, alignment: .trailing)

@@ -28,6 +28,7 @@ struct PlayerBarView : View {
                     Text(playerService.getPlayingTrack().author.joined(separator: ", ")).font(.subheadline)
                 }
                 .frame(maxWidth: .infinity)
+                .contentShape(Rectangle())
                 .onTapGesture {
                     show = true
                 }
