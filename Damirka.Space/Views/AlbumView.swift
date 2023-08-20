@@ -27,7 +27,6 @@ struct AlbumView: View {
         } catch {
             print(error)
         }
-        
         playerService.playTrack(track: currentTrackId)
     }
     

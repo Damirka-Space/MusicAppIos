@@ -24,8 +24,8 @@ struct PlayerBarView : View {
                     .imageScale(.large)
                 
                 VStack {
-                    Text(playerService.getPlayingTrack().title).font(.headline)
-                    Text(playerService.getPlayingTrack().author.joined(separator: ", ")).font(.subheadline)
+                    Text(playerService.getPlayingTrack().title).font(.callout)
+                    Text(playerService.getPlayingTrack().author.joined(separator: ", ")).font(.caption)
                 }
                 .frame(maxWidth: .infinity)
                 .contentShape(Rectangle())

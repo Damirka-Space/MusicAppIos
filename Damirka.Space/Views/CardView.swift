@@ -27,7 +27,7 @@ struct CardView: View {
             .shadow(color: .primary, radius: 5)
             
             Group {
-                Text(album.title).font(.headline)
+                Text(album.title).font(.headline).fontWeight(.regular)
                     .frame(width: 150, height: 20, alignment: .leading)
                     .foregroundColor(.black)
                 Text(album.description).font(.subheadline)

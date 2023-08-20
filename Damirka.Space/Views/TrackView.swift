@@ -22,6 +22,7 @@ struct TrackView: View {
         HStack {
             if(isAlbum) {
                 Text(index.description)
+                    .font(.callout)
                     .frame(width: 25, height: 20, alignment: .leading)
             } else {
                 AsyncImage(url: URL(string: track.metadataImageUrl)) { image in
@@ -36,9 +37,11 @@ struct TrackView: View {
             
             VStack {
                 Text(track.title)
-                    .frame(width: 200, height: 10, alignment: .leading)
+                    .font(.callout)
+                    .frame(width: 300, height: 10, alignment: .leading)
                 Text(track.author.joined(separator: ", "))
-                    .frame(width: 200, height: 10, alignment: .leading)
+                    .font(.footnote)
+                    .frame(width: 300, height: 10, alignment: .leading)
             }
             .contentShape(Rectangle())
             
