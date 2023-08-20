@@ -10,20 +10,19 @@ import Combine
 import MediaPlayer
 
 final class PlayerService : AVPlayer, ObservableObject {
-    private var albumId = -1
-    private var currentIndex = -1
+    
     private var tracks: [TrackEntity]?
-    
-    private var playingQueue = AVQueuePlayer()
-    
-    private var playing = false
-    private var showBarView = false;
    
     private var timeObserverToken: Any?
     
     private var nowPlayingInfo = [String: Any]()
     
     @Published var currentTimeInSeconds: Double = 0.0
+    
+    @Published private var albumId = -1
+    @Published private var currentIndex = -1
+    @Published private var playing = false
+    @Published private var showBarView = false;
     
     var observer: NSKeyValueObservation?
     
@@ -89,13 +88,11 @@ final class PlayerService : AVPlayer, ObservableObject {
     
     func playPlaylist(tracks: [TrackEntity], id: Int) {
         self.setPlaylist(tracks: tracks, id: id)
-        playingQueue.removeAllItems()
     }
     
     func setPlaylist(tracks: [TrackEntity], id: Int) {
         self.tracks = tracks
         self.albumId = id
-        showBarView = true
     }
     
     
@@ -143,6 +140,8 @@ final class PlayerService : AVPlayer, ObservableObject {
     }
     
     func setupMediaPlayerNotificationView() {
+        self.showBarView = true
+        
         do {
             NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil, queue: nil) { [self] notification in
                 playTrack(track: currentIndex + 1)
@@ -199,9 +198,8 @@ final class PlayerService : AVPlayer, ObservableObject {
         pause()
         
         let playerItem = AVPlayerItem.init(url: URL(string: tracks![currentIndex].url)!)
-        
         self.replaceCurrentItem(with: playerItem)
-        
+
         // Register as an observer of the player item's status property
         self.observer = playerItem.observe(\.status, options:  [.new, .old], changeHandler: { [self] (playerItem, change) in
             if playerItem.status == .readyToPlay {
