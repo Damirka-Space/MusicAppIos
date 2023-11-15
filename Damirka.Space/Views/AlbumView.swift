@@ -40,13 +40,18 @@ struct AlbumView: View {
                             .cornerRadius(20.0)
                     } placeholder: {
                         ProgressView()
+                            .scaledToFit()
+                            .cornerRadius(20.0)
                     }
                     .frame(maxWidth: .infinity, maxHeight: 300, alignment: .center)
+                    .contentShape(Rectangle())
 
                     Text(album.title).font(.title2)
+                        .padding(.top, 10)
                     Text(album.description).font(.title3)
                 }
                 .frame(maxWidth: .infinity, alignment: .center)
+                .padding()
             }
             
             switch(tracksModel.result) {

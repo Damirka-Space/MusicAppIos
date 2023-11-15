@@ -5,7 +5,6 @@
 //  Created by Dam1rka on 21.07.2023.
 //
 
-import AVKit
 import Combine
 import MediaPlayer
 
@@ -52,6 +51,14 @@ final class PlayerService : AVPlayer, ObservableObject {
             
             MPNowPlayingInfoCenter.default().nowPlayingInfo = self?.nowPlayingInfo
         }
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil, queue: nil) { [self] notification in
+            playNext()
+        }
+    }
+    
+    func getPlaylist() -> [TrackEntity]? {
+        return tracks
     }
     
     func isNeedShowBarView() -> Bool {
@@ -143,14 +150,20 @@ final class PlayerService : AVPlayer, ObservableObject {
         self.showBarView = true
         
         do {
-            NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil, queue: nil) { [self] notification in
-                playTrack(track: currentIndex + 1)
-            }
-            
             try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
             let _ = try AVAudioSession.sharedInstance().setActive(true)
             
             let commandCenter = MPRemoteCommandCenter.shared()
+            
+            commandCenter.changePlaybackPositionCommand.addTarget {
+                [unowned self] event in
+                
+                let posEvent = event as! MPChangePlaybackPositionCommandEvent
+                
+                self.rewindTime(to: posEvent.positionTime)
+                
+                return .success
+            }
             
             commandCenter.playCommand.addTarget {
                 [unowned self] event in

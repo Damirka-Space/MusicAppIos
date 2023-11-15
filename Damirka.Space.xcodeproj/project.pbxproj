@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB03F2612AA3AF5100C3B77B /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB03F2602AA3AF5100C3B77B /* AuthService.swift */; };
+		BB03F2632AA3B72100C3B77B /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB03F2622AA3B72100C3B77B /* SafariView.swift */; };
 		BB2CA7BD2A6C197C0019491B /* UIToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2CA7BC2A6C197C0019491B /* UIToolBar.swift */; };
 		BB2CA7BF2A6C20590019491B /* PlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2CA7BE2A6C20590019491B /* PlayView.swift */; };
 		BB2CA7C12A6C20F00019491B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2CA7C02A6C20F00019491B /* ProfileView.swift */; };
@@ -52,6 +54,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BB03F2602AA3AF5100C3B77B /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		BB03F2622AA3B72100C3B77B /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		BB2CA7BC2A6C197C0019491B /* UIToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIToolBar.swift; sourceTree = "<group>"; };
 		BB2CA7BE2A6C20590019491B /* PlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayView.swift; sourceTree = "<group>"; };
 		BB2CA7C02A6C20F00019491B /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				BB2CA7BC2A6C197C0019491B /* UIToolBar.swift */,
+				BB03F2622AA3B72100C3B77B /* SafariView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -219,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				BB372A6E2A69BFB40039EF18 /* PlayerService.swift */,
+				BB03F2602AA3AF5100C3B77B /* AuthService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -239,6 +245,8 @@
 			dependencies = (
 			);
 			name = Damirka.Space;
+			packageProductDependencies = (
+			);
 			productName = Damirka.Space;
 			productReference = BB369F6F2A69538800B54374 /* Damirka.Space.app */;
 			productType = "com.apple.product-type.application";
@@ -311,6 +319,8 @@
 				Base,
 			);
 			mainGroup = BB369F662A69538800B54374;
+			packageReferences = (
+			);
 			productRefGroup = BB369F702A69538800B54374 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -359,11 +369,13 @@
 				BB9DF0162A6A78F600675C9B /* TrackView.swift in Sources */,
 				BB372A6C2A69B2180039EF18 /* TracksModel.swift in Sources */,
 				BB2CA7BF2A6C20590019491B /* PlayView.swift in Sources */,
+				BB03F2612AA3AF5100C3B77B /* AuthService.swift in Sources */,
 				BB773D112A6AE55500FD754F /* PlayerBarView.swift in Sources */,
 				BB2CA7C52A6C673C0019491B /* CustomTabView.swift in Sources */,
 				BB372A5A2A6974890039EF18 /* BlockEntity.swift in Sources */,
 				BB372A652A69B0F10039EF18 /* CardView.swift in Sources */,
 				BB372A572A6969150039EF18 /* HomeView.swift in Sources */,
+				BB03F2632AA3B72100C3B77B /* SafariView.swift in Sources */,
 				BB372A682A69B1200039EF18 /* BlocksModel.swift in Sources */,
 				BB2CA7C12A6C20F00019491B /* ProfileView.swift in Sources */,
 				BB369F752A69538800B54374 /* ContentView.swift in Sources */,
@@ -528,6 +540,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_USE_OPTIMIZATION_PROFILE = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Damirka.Space/Preview Content\"";
@@ -535,11 +548,11 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Damirka-Space-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -558,6 +571,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_USE_OPTIMIZATION_PROFILE = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Damirka.Space/Preview Content\"";
@@ -565,11 +579,11 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Damirka-Space-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

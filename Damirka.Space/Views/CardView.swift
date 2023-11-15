@@ -20,16 +20,18 @@ struct CardView: View {
             AsyncImage(url: URL(string: album.image.url)) { image in
                 image.resizable()
                     .cornerRadius(10.0)
+                    .shadow(color: .primary, radius: 3)
             } placeholder: {
                 ProgressView()
             }
             .frame(width: 150, height: 150)
-            .shadow(color: .primary, radius: 5)
             
             Group {
                 Text(album.title).font(.headline).fontWeight(.regular)
                     .frame(width: 150, height: 20, alignment: .leading)
                     .foregroundColor(.black)
+                    .padding(.top, 5)
+
                 Text(album.description).font(.subheadline)
                     .frame(width: 150, height: 10, alignment: .leading)
                     .foregroundColor(.black)

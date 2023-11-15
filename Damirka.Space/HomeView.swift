@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject private var blocksModel = BlocksModel()
-
+    
     let rows = [
         GridItem(.adaptive(minimum: 150, maximum: 150))
     ]
@@ -48,8 +48,6 @@ struct HomeView: View {
                 AlbumView(album: album)
             }
             .navigationDestination(for: String.self) { dest in
-                
-                
                 
                 switch(dest) {
                 case "Profile":
