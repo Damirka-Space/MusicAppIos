@@ -41,9 +41,12 @@ struct AlbumView: View {
                     } placeholder: {
                         ProgressView()
                             .scaledToFit()
+                            .frame(maxWidth: .infinity, minHeight: 300, alignment: .center)
+                            .background(.black)
                             .cornerRadius(20.0)
                     }
-                    .frame(maxWidth: .infinity, maxHeight: 300, alignment: .center)
+                    .frame(maxWidth: .infinity, minHeight: 300, alignment: .center)
+                    .cornerRadius(20.0)
                     .contentShape(Rectangle())
 
                     Text(album.title).font(.title2)

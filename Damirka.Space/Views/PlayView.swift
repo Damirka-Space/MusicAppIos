@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct PlayView: View {
     @Binding var show: Bool
@@ -29,19 +30,21 @@ struct PlayView: View {
     
 //    @State private var swipe = false
     
-    @State private var tracks: [TrackEntity?] = [
-//        TrackEntity(id: 1, title: "Test", author: ["Author"], albumId: 0, album: "Album", url: "https://damirka.space/fs/smallImages/34", imageUrl: "https://damirka.space/fs/smallImages/34", metadataImageUrl: "https://damirka.space/fs/smallImages/34", liked: false),
-//
-//        TrackEntity(id: 1, title: "Test2", author: ["Author2"], albumId: 0, album: "Album", url: "https://damirka.space/fs/smallImages/35", imageUrl: "https://damirka.space/fs/smallImages/35", metadataImageUrl: "https://damirka.space/fs/smallImages/35", liked: false),
-//
-//        TrackEntity(id: 1, title: "Test3", author: ["Author3"], albumId: 0, album: "Album", url: "https://damirka.space/fs/smallImages/36", imageUrl: "https://damirka.space/fs/smallImages/36", metadataImageUrl: "https://damirka.space/fs/smallImages/36", liked: false),
-//
-//        TrackEntity(id: 1, title: "Test4", author: ["Author4"], albumId: 0, album: "Album", url: "https://damirka.space/fs/smallImages/33", imageUrl: "https://damirka.space/fs/smallImages/37", metadataImageUrl: "https://damirka.space/fs/smallImages/37", liked: false),
-//
-//        TrackEntity(id: 1, title: "Test5", author: ["Author5"], albumId: 0, album: "Album", url: "https://damirka.space/fs/smallImages/33", imageUrl: "https://damirka.space/fs/smallImages/33", metadataImageUrl: "https://damirka.space/fs/smallImages/33", liked: false),
-    ]
+    @State private var tracks: [TrackEntity?] = []
     
     @State var index = 0
+    
+    @State private var t = [
+                TrackEntity(id: 1, title: "Test", author: ["Author"], albumId: 0, album: "Album", url: "https://damirka.space/fs/smallImages/34", imageUrl: "https://damirka.space/fs/smallImages/34", metadataImageUrl: "https://damirka.space/fs/smallImages/34", liked: false),
+        
+                TrackEntity(id: 1, title: "Test2", author: ["Author2"], albumId: 0, album: "Album", url: "https://damirka.space/fs/smallImages/35", imageUrl: "https://damirka.space/fs/smallImages/35", metadataImageUrl: "https://damirka.space/fs/smallImages/35", liked: false),
+        
+                TrackEntity(id: 1, title: "Test3", author: ["Author3"], albumId: 0, album: "Album", url: "https://damirka.space/fs/smallImages/36", imageUrl: "https://damirka.space/fs/smallImages/36", metadataImageUrl: "https://damirka.space/fs/smallImages/36", liked: false),
+        
+                TrackEntity(id: 1, title: "Test4", author: ["Author4"], albumId: 0, album: "Album", url: "https://damirka.space/fs/smallImages/33", imageUrl: "https://damirka.space/fs/smallImages/37", metadataImageUrl: "https://damirka.space/fs/smallImages/37", liked: false),
+        
+                TrackEntity(id: 1, title: "Test5", author: ["Author5"], albumId: 0, album: "Album", url: "https://damirka.space/fs/smallImages/33", imageUrl: "https://damirka.space/fs/smallImages/33", metadataImageUrl: "https://damirka.space/fs/smallImages/33", liked: false),
+    ]
     
     var small = 250.0
     
@@ -55,6 +58,8 @@ struct PlayView: View {
     var shOf = 10.0
     
     var of = 260.0
+    
+    // TODO: fix offsets
     
     // 0 130 260 ...
     @State var sf = 130.0
@@ -99,38 +104,40 @@ struct PlayView: View {
 //                    .tabViewStyle(PageTabViewStyle())
                 
                 ZStack() {
-                    HStack(alignment: .center) {
+                    LazyHStack(alignment: .center) {
                         
                         Spacer()
                         
-                        ForEach(tracks.indices) { i in
-                            let track = tracks[i]
-                            
-                            let size = i == index ? size : small
-                            
-                            let shadowOffset = i == index ? shadowOffset : 0.0
-                            
-                            let shadow = i == index ? shadow : 0.0
-                            
-                            let padding = i == index ? padding : 0.0
-                            
-                            ZStack {
-                                AsyncImage(url: URL(string: track!.imageUrl)) { image in
-                                    image.resizable()
-                                        .cornerRadius(10.0)
-                                        .frame(width: size, height: size)
-                                        .shadow(radius: shadow, y: shadowOffset)
-                                        .padding(.horizontal, padding)
-                                } placeholder: {
-                                    ProgressView()
-                                        .frame(width: size, height: size)
-                                        .background(.white)
-                                        .cornerRadius(10.0)
-                                        .border(.black)
+                        if(tracks.count > 0) {
+                            ForEach(tracks.indices) { i in
+                                let track = tracks[i]
+                                
+                                let size = i == index ? size : small
+                                
+                                let shadowOffset = i == index ? shadowOffset : 0.0
+                                
+                                let shadow = i == index ? shadow : 0.0
+                                
+                                let padding = i == index ? padding : 0.0
+                                
+                                ZStack {
+                                    AsyncImage(url: URL(string: track!.metadataImageUrl)) { image in
+                                        image.resizable()
+                                            .cornerRadius(10.0)
+                                            .frame(width: size, height: size)
+                                            .shadow(radius: shadow, y: shadowOffset)
+                                            .padding(.horizontal, padding)
+                                    } placeholder: {
+                                        ProgressView()
+                                            .frame(width: size, height: size)
+                                            .background(.white)
+                                            .cornerRadius(10.0)
+                                            .border(.black)
+                                    }
+                                    .frame(width: size, height: size)
+                                    .shadow(radius: shadow, y: shadowOffset)
+                                    .padding(.horizontal, padding)
                                 }
-                                .frame(width: size, height: size)
-                                .shadow(radius: shadow, y: shadowOffset)
-                                .padding(.horizontal, padding)
                             }
                         }
                         
@@ -140,23 +147,16 @@ struct PlayView: View {
                 }.frame(width: 400, height: 300)
                     .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local)
                         .onChanged({value in
-                            offset = value.translation.width
+                            if(tracks.count > 1) {
+                                offset = value.translation.width
+                            }
                         })
                         .onEnded({ value in
-                            if value.translation.width < small {
+//                            print(value.translation.width)
+//                            print(value.translation.height)
+                            if (value.translation.width > small) {
                                                 // left
-                                
-                                withAnimation(.easeOut(duration: 0.2)) {
-                                    offset = 0
-                                    playerService.playNext()
-                                    index = playerService.getPlayingIndex()
-                                    startOffset = sf + Double(index) * -of
-                                }
-                            }
-
-                            if value.translation.width > -small {
-                                                // right
-                                
+//                                print("LEFT")
                                 withAnimation(.easeOut(duration: 0.2)) {
                                     offset = 0
                                     playerService.playPrev()
@@ -164,43 +164,55 @@ struct PlayView: View {
                                     startOffset = sf + Double(index) * -of
                                 }
                             }
-                            if value.translation.height < 0 {
+                            else if (value.translation.width < -small) {
+                                                // right
+//                                print("RIGHT")
+                                withAnimation(.easeOut(duration: 0.2)) {
+                                    offset = 0
+                                    playerService.playNext()
+                                    index = playerService.getPlayingIndex()
+                                    startOffset = sf + Double(index) * -of
+                                }
+                            }
+                            else {
+                                withAnimation(.easeOut(duration: 0.2)) {
+                                    offset = 0
+                                }
+                            }
+                            
+                            if (value.translation.height < (small / 2)) {
                                                 // up
                             }
-
-                            if value.translation.height > 0 {
+                            else if (value.translation.height > (small / 2)) {
                                                 // close on swipe down
                                 close()
                             }
+                            
                     }))
                 
                 HStack(alignment: .center) {
                     VStack {
-                        let track = tracks[index]
-                        
-                        Text(track!.title).font(.headline).fontWeight(.regular)
-                            .frame(width: 300, height: 20, alignment: .leading)
-                            .foregroundColor(.white)
-                            .padding(.top, 5)
+                        if(tracks.count > 0) {
+                            let track = tracks[index]
+                            
+                            Text(track!.title).font(.headline).fontWeight(.regular)
+                                .frame(width: 300, height: 20, alignment: .leading)
+                                .foregroundColor(.white)
+                                .padding(.top, 5)
 
-                        Text(track!.author.joined(separator: ", ")).font(.subheadline)
-                            .frame(width: 300, height: 20, alignment: .leading)
-                            .foregroundColor(.white)
+                            Text(track!.author.joined(separator: ", ")).font(.subheadline)
+                                .frame(width: 300, height: 20, alignment: .leading)
+                                .foregroundColor(.white)
+                        }
                     }.frame(maxWidth: .infinity, alignment: .leading).padding(.leading, 50)
                     
                     HStack {
                         Image(systemName: "ellipsis.circle.fill").imageScale(.large)
                     }.frame(maxWidth: .infinity, alignment: .trailing).padding(.trailing, 50)
-                }.frame(maxWidth: .infinity).padding(.top, 20)
+                }.frame(maxWidth: .infinity).padding(.vertical, 20)
                 
                 HStack(alignment: .center) {
-                    Slider(
-                                value: $speed,
-                                in: 0...100,
-                                onEditingChanged: { editing in
-                                    isEditing = editing
-                                }
-                            )
+                    ProgressView(value: playerService.currentTime().seconds, total: playerService.currentItem?.duration.seconds ?? 0.0)
                 }.padding(.horizontal, 40)
                 
                 HStack(alignment: .center) {
@@ -275,8 +287,19 @@ struct PlayView: View {
                 index = playerService.getPlayingIndex()
                 
                 if(tracks.count > 0) {
+//                    print("TEST")
                     sf = Double((tracks.count - 1)) * 130.0
-                    startOffset = sf
+                    
+                    startOffset = sf + Double(index) * -of
+                    
+                    if(playerService.isPlaying()) {
+                        withAnimation(.easeOut(duration: 0.3)) {
+                            size = large
+                            padding = padLarge
+                            shadow = sh
+                            shadowOffset = shOf
+                        }
+                    }
                 }
             }
             .toolbar {
