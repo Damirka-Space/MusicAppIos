@@ -12,10 +12,17 @@ struct Damirka_SpaceApp: App {
     @State
     private var playerService = PlayerService()
     
+    @State
+    private var authService = AuthService()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(playerService)
+                .environmentObject(authService)
+                .onAppear(perform: {
+                    playerService.setup(authService: authService)
+                })
         }
     }
 }

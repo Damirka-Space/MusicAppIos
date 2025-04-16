@@ -10,6 +10,8 @@ import SwiftUI
 struct HomeView: View {
     @StateObject private var blocksModel = BlocksModel()
     
+    @EnvironmentObject var authService: AuthService
+    
     let rows = [
         GridItem(.adaptive(minimum: 150, maximum: 150))
     ]
@@ -39,8 +41,14 @@ struct HomeView: View {
                     Text(error.localizedDescription)
                 case nil:
                     ProgressView()
-                        .onAppear(perform: blocksModel.apiCall)
+                        .onAppear(perform: {
+                            blocksModel.setup(authService: self.authService)
+                            blocksModel.apiCall()
+                        })
                 }
+            }
+            .refreshable {
+                blocksModel.apiCall()
             }
             .navigationTitle("")
             .navigationBarTitleDisplayMode(.inline)

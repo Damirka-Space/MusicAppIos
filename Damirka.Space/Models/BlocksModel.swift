@@ -8,19 +8,29 @@
 import SwiftUI
 
 class BlocksModel : ObservableObject {
-    private var urlApi = "https://damirka.space/api"
+    private var urlApi = "https://api.dam1rka.duckdns.org"
     @Published var result: Result<[BlockEntity], Error>?
+    
+    var authService: AuthService?
+    
+    func setup(authService: AuthService) {
+        self.authService = authService
+    }
     
     func apiCall() {
         guard let url = URL(string: self.urlApi + "/main") else {
             return
         }
         
-        let request = URLRequest(url: url)
+        var request = URLRequest(url: url)
+        
+        request.setValue(authService?.getAuthHeader(), forHTTPHeaderField: "Authorization")
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if error != nil {
                 // Handle error
+                
+                print(error?.localizedDescription)
                 return
             }
             

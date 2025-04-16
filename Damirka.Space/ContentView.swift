@@ -24,7 +24,7 @@ struct ContentView: View {
     init() {
         UIToolbar.changeAppearance(clear: true)
         
-        URLCache.shared.memoryCapacity = 10_000_000 // ~10 MB memory space
+        URLCache.shared.memoryCapacity = 200_000_000 // ~200 MB memory space
         URLCache.shared.diskCapacity = 1_000_000_000 // ~1GB disk cache space
     }
     
@@ -95,10 +95,17 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     
     @State
+    private static var authService = AuthService()
+    
+    @State
     private static var player = PlayerService()
     
     static var previews: some View {
         ContentView()
             .environmentObject(player)
+            .environmentObject(authService)
+            .onAppear(perform: {
+                player.setup(authService: authService)
+            })
     }
 }

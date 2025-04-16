@@ -9,7 +9,7 @@
 import SwiftUI
 
 class TracksModel : ObservableObject {
-    private var urlApi = "https://damirka.space/api"
+    private var urlApi = "https://api.dam1rka.duckdns.org"
     @Published var result: Result<[TrackEntity], Error>?
     
     func apiCall(albumId: Int) {

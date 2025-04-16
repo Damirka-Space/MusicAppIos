@@ -33,6 +33,7 @@
 		BB372A6C2A69B2180039EF18 /* TracksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB372A6B2A69B2180039EF18 /* TracksModel.swift */; };
 		BB372A6F2A69BFB40039EF18 /* PlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB372A6E2A69BFB40039EF18 /* PlayerService.swift */; };
 		BB773D112A6AE55500FD754F /* PlayerBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB773D102A6AE55500FD754F /* PlayerBarView.swift */; };
+		BB861A3B2B566C29000D25FD /* TokenEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB861A3A2B566C29000D25FD /* TokenEntity.swift */; };
 		BB9DF0162A6A78F600675C9B /* TrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9DF0152A6A78F600675C9B /* TrackView.swift */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +85,7 @@
 		BB372A6E2A69BFB40039EF18 /* PlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerService.swift; sourceTree = "<group>"; };
 		BB372A702A69CBAB0039EF18 /* Damirka-Space-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Damirka-Space-Info.plist"; sourceTree = SOURCE_ROOT; };
 		BB773D102A6AE55500FD754F /* PlayerBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerBarView.swift; sourceTree = "<group>"; };
+		BB861A3A2B566C29000D25FD /* TokenEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenEntity.swift; sourceTree = "<group>"; };
 		BB9DF0152A6A78F600675C9B /* TrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -192,6 +194,7 @@
 				BB372A5D2A6976100039EF18 /* TrackEntity.swift */,
 				BB372A5F2A697C340039EF18 /* BlocksEntity.swift */,
 				BB372A612A6986150039EF18 /* ImageEntity.swift */,
+				BB861A3A2B566C29000D25FD /* TokenEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				BB03F2632AA3B72100C3B77B /* SafariView.swift in Sources */,
 				BB372A682A69B1200039EF18 /* BlocksModel.swift in Sources */,
 				BB2CA7C12A6C20F00019491B /* ProfileView.swift in Sources */,
+				BB861A3B2B566C29000D25FD /* TokenEntity.swift in Sources */,
 				BB369F752A69538800B54374 /* ContentView.swift in Sources */,
 				BB372A5C2A6974BB0039EF18 /* AlbumEntity.swift in Sources */,
 				BB2CA7BD2A6C197C0019491B /* UIToolBar.swift in Sources */,
@@ -606,6 +610,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9PH72V22JG;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MARKETING_VERSION = 1.0;
@@ -625,6 +630,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9PH72V22JG;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MARKETING_VERSION = 1.0;
@@ -643,6 +649,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9PH72V22JG;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "space.damirka.Damirka-SpaceUITests";
@@ -660,6 +667,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9PH72V22JG;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "space.damirka.Damirka-SpaceUITests";

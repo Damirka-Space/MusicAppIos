@@ -38,7 +38,7 @@ struct TrackView: View {
             VStack {
                 Text(track.title)
                     .font(.callout)
-                    .frame(width: 300, height: 10, alignment: .leading)
+                    .frame(width: 300, height: 12, alignment: .leading)
                 Text(track.author.joined(separator: ", "))
                     .font(.footnote)
                     .frame(width: 300, height: 10, alignment: .leading)

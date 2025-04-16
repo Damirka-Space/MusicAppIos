@@ -7,10 +7,11 @@
 
 import Combine
 import MediaPlayer
+import SwiftUI
 
 final class PlayerService : AVPlayer, ObservableObject {
     
-    private var tracks: [TrackEntity]?
+    @Published private var tracks: [TrackEntity]?
    
     private var timeObserverToken: Any?
     
@@ -23,6 +24,12 @@ final class PlayerService : AVPlayer, ObservableObject {
     @Published private var playing = false
     @Published private var showBarView = false;
     
+    private var authService: AuthService?
+    
+    public func setup(authService: AuthService) {
+        self.authService = authService
+    }
+    
     var observer: NSKeyValueObservation?
     
     var currentTimeInSecondsPass: AnyPublisher<Double, Never>  {
@@ -33,6 +40,39 @@ final class PlayerService : AVPlayer, ObservableObject {
     override init() {
         super.init()
         registerObserves()
+    }
+    
+    private func save(fullUrl: String) {
+        guard let url = URL(string: fullUrl) else {
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        
+        request.setValue(authService?.getAuthHeader(), forHTTPHeaderField: "Authorization")
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if error != nil {
+                // Handle error
+                
+                return
+            }
+            
+            let response = response as! HTTPURLResponse
+            
+            //print(response.statusCode)
+        }
+        task.resume()
+    }
+    
+    private func savePlaylistToHistory(playlistId: Int) {
+        let url = "https://api.dam1rka.duckdns.org/history/save/album/\(playlistId)"
+        self.save(fullUrl: url)
+    }
+    
+    private func saveTrackToHistory(trackId: Int) {
+        let url = "https://api.dam1rka.duckdns.org/history/save/track/\(trackId)"
+        self.save(fullUrl: url)
     }
 
     private func registerObserves() {
@@ -100,6 +140,8 @@ final class PlayerService : AVPlayer, ObservableObject {
     func setPlaylist(tracks: [TrackEntity], id: Int) {
         self.tracks = tracks
         self.albumId = id
+        
+        self.savePlaylistToHistory(playlistId: id)
     }
     
     
@@ -156,7 +198,7 @@ final class PlayerService : AVPlayer, ObservableObject {
             let commandCenter = MPRemoteCommandCenter.shared()
             
             commandCenter.changePlaybackPositionCommand.addTarget {
-                [unowned self] event in
+                [self] event in
                 
                 let posEvent = event as! MPChangePlaybackPositionCommandEvent
                 
@@ -166,25 +208,25 @@ final class PlayerService : AVPlayer, ObservableObject {
             }
             
             commandCenter.playCommand.addTarget {
-                [unowned self] event in
+                [self] event in
                 self.play()
                 return .success
             }
             
             commandCenter.pauseCommand.addTarget {
-                [unowned self] event in
+                [self] event in
                 self.pause()
                 return .success
             }
             
             commandCenter.previousTrackCommand.addTarget {
-                [unowned self] event in
+                [self] event in
                 self.playPrev()
                 return .success
             }
 
             commandCenter.nextTrackCommand.addTarget {
-                [unowned self] event in
+                [self] event in
                 self.playNext()
                 return .success
             }
@@ -198,28 +240,36 @@ final class PlayerService : AVPlayer, ObservableObject {
 
     
     func playTrack(track: Int) {
-        if(track >= tracks!.count) {
-            currentIndex = 0
-        }
-        else if(track < 0) {
-            currentIndex = tracks!.count - 1
-        }
-        else {
-            currentIndex = track
-        }
-        
-        pause()
-        
-        let playerItem = AVPlayerItem.init(url: URL(string: tracks![currentIndex].url)!)
-        self.replaceCurrentItem(with: playerItem)
-
-        // Register as an observer of the player item's status property
-        self.observer = playerItem.observe(\.status, options:  [.new, .old], changeHandler: { [self] (playerItem, change) in
-            if playerItem.status == .readyToPlay {
-                setupMediaPlayerNotificationView();
-                play()
+        if let tracks = tracks {
+            if(track >= tracks.count) {
+                currentIndex = 0
             }
-        })
+            else if(track < 0) {
+                currentIndex = tracks.count - 1
+            }
+            else {
+                currentIndex = track
+            }
+            
+            pause()
+            
+            let trackEntity = tracks[currentIndex]
+            
+            self.saveTrackToHistory(trackId: trackEntity.id)
+            
+            let playerItem = AVPlayerItem.init(url: URL(string: trackEntity.url)!)
+            self.replaceCurrentItem(with: playerItem)
+
+            // Register as an observer of the player item's status property
+            self.observer = playerItem.observe(\.status, options:  [.new, .old], changeHandler: { [self] (playerItem, change) in
+                if playerItem.status == .readyToPlay {
+                    setupMediaPlayerNotificationView();
+                    play()
+                    
+                    
+                }
+            })
+        }
     }
     
     func playNext() {
